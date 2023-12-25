@@ -31,7 +31,7 @@ export default defineType({
   preview: {
     select: {
       title: 'name',
-      icon: 'icon'
+      icon: 'icon',
     },
     prepare(select) {
       return {

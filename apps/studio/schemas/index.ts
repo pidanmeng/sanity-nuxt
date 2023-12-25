@@ -4,5 +4,8 @@ import author from './author'
 import category from './category'
 import codeBlock from './codeBlock'
 import tags from './tags'
+import event from './event'
 
-export const schemaTypes = [post, blockContent, author, category, codeBlock, tags]
+const customFields = [codeBlock, blockContent]
+
+export const schemaTypes = [event, post, author, category, tags, ...customFields]

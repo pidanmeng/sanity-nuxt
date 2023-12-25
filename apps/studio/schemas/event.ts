@@ -1,5 +1,5 @@
-
 import {defineField, defineType} from 'sanity'
+import {preview} from 'sanity-plugin-icon-picker'
 
 export default defineType({
   name: 'event',
@@ -17,13 +17,6 @@ export default defineType({
       type: 'dateRange',
     }),
     defineField({
-      name: 'category',
-      title: 'Category',
-      type: 'reference',
-      to: [{type: 'category'}],
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
       name: 'tags',
       title: 'Tags',
       type: 'array',
@@ -36,28 +29,35 @@ export default defineType({
       ],
     }),
     defineField({
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
+      name: 'media',
+      title: 'Media',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'media.tag'}]
+        },
+      ],
     }),
   ],
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
-      media: 'mainImage',
+      from: 'period.from',
+      to: 'period.to',
+      icon: 'tags',
     },
     prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+      const {from, to, icon} = selection
+      console.log(`output->icon`, icon)
+      let subtitle = ''
+      if (from && to) {
+        subtitle = `${new Date(from).toLocaleDateString()} - ${new Date(to).toLocaleDateString()}`
+        if (from === to) {
+          subtitle = `${new Date(from).toLocaleDateString()}`
+        }
+      }
+      return {...selection, subtitle, media: preview(icon)}
     },
   },
 })
