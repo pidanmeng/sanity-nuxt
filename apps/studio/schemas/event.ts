@@ -1,8 +1,9 @@
+
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'post',
-  title: 'Post',
+  name: 'event',
+  title: 'Event',
   type: 'document',
   fields: [
     defineField({
@@ -14,23 +15,6 @@ export default defineType({
     defineField({
       name: 'period',
       type: 'dateRange',
-    }),
-    defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      validation: (Rule) => Rule.required(),
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-    }),
-    defineField({
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: [{type: 'author'}],
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'category',

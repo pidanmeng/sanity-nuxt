@@ -5,7 +5,8 @@ import {codeInput} from '@sanity/code-input'
 import {deskTool} from 'sanity/desk'
 import {media} from 'sanity-plugin-media'
 import {visionTool} from '@sanity/vision'
-import { iconPicker } from 'sanity-plugin-icon-picker';
+import {iconPicker} from 'sanity-plugin-icon-picker'
+import {dateRangePlugin} from 'sanity-plugin-daterange-input'
 export const projectId = 'exjxieex'
 export const dataset = 'production'
 
@@ -18,6 +19,7 @@ export default defineConfig({
     codeInput(),
     colorInput(),
     iconPicker(),
+    dateRangePlugin({}),
     deskTool(),
     media(),
     visionTool(),

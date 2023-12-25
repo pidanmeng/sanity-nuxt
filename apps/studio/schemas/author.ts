@@ -10,11 +10,13 @@ export default defineType({
       name: 'name',
       title: 'Name',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'image',
       title: 'Avatar',
       type: 'image',
+      validation: (Rule) => Rule.required(),
       options: {
         hotspot: true,
       },

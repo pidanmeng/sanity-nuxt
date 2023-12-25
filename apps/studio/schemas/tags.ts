@@ -10,16 +10,19 @@ export default defineType({
       name: 'name',
       title: 'Name',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'color',
       title: 'Color',
       type: 'color',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'icon',
       title: 'Icon',
       type: 'iconPicker',
+      validation: (Rule) => Rule.required(),
       options: {
         providers: ['f7', 'fa', 'mdi', 'sa', 'hi', 'fi', 'si'],
       },
