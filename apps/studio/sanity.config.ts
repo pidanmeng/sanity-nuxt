@@ -8,6 +8,8 @@ import {visionTool} from '@sanity/vision'
 import {iconPicker} from 'sanity-plugin-icon-picker'
 import {dateRangePlugin} from 'sanity-plugin-daterange-input'
 import {table} from '@sanity/table'
+import {markdownSchema} from 'sanity-plugin-markdown'
+import {CustomMarkdownInput} from './components/markdownInput'
 export const projectId = 'exjxieex'
 export const dataset = 'production'
 
@@ -17,6 +19,7 @@ export default defineConfig({
   projectId,
   dataset,
   plugins: [
+    markdownSchema({input: CustomMarkdownInput}),
     codeInput(),
     colorInput(),
     iconPicker(),

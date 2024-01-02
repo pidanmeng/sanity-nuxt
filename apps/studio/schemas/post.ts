@@ -64,6 +64,11 @@ export default defineType({
       title: 'Body',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'md',
+      title: 'Markdown',
+      type: 'markdown',
+    })
   ],
   preview: {
     select: {

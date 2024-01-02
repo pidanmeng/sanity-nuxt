@@ -21,6 +21,9 @@
     "@sanity/color-input": "^3.1.0",
     "@sanity/table": "^1.0.1",
     "@sanity/vision": "^3.8.1",
+    "dompurify": "^3.0.6",
+    "easymde": "2",
+    "marked": "^11.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
@@ -28,11 +31,13 @@
     "sanity-plugin-daterange-input": "^1.0.1",
     "sanity-plugin-icon-picker": "^3.2.2",
     "sanity-plugin-iconify": "^1.1.1",
+    "sanity-plugin-markdown": "^4.1.0",
     "sanity-plugin-media": "^2.2.4",
     "styled-components": "^5.2.0"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^2.0.4",
+    "@types/dompurify": "^3.0.5",
     "@types/react": "^18.2.37",
     "@types/styled-components": "^5.1.30",
     "eslint": "^8.54.0",
