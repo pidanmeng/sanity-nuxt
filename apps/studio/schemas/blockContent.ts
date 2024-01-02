@@ -64,5 +64,9 @@ export default defineType({
       type: 'codeBlock',
       name: 'code',
     }),
+    defineField({
+      type: 'table',
+      name: 'table'
+    })
   ],
 })

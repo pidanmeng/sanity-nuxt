@@ -7,6 +7,7 @@ import {media} from 'sanity-plugin-media'
 import {visionTool} from '@sanity/vision'
 import {iconPicker} from 'sanity-plugin-icon-picker'
 import {dateRangePlugin} from 'sanity-plugin-daterange-input'
+import {table} from '@sanity/table'
 export const projectId = 'exjxieex'
 export const dataset = 'production'
 
@@ -19,6 +20,7 @@ export default defineConfig({
     codeInput(),
     colorInput(),
     iconPicker(),
+    table(),
     dateRangePlugin({}),
     deskTool(),
     media(),
